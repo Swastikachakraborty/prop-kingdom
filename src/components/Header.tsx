@@ -16,21 +16,21 @@ export default function Header() {
 
   return (
     <header className="sticky top-0 z-50 bg-black/95 backdrop-blur-sm border-b border-[#c9a961]/20">
-      <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-5 lg:px-12">
+      <nav className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-12">
         {/* Logo */}
-        <Link href="/" className="flex items-center gap-3">
+        <Link href="/" className="flex items-center gap-2 sm:gap-3">
           <div className="flex flex-col">
-            <span className="text-2xl font-bold text-[#c9a961] tracking-wider" style={{ fontFamily: "var(--font-playfair)" }}>
+            <span className="text-lg sm:text-xl md:text-2xl font-bold text-[#c9a961] tracking-wider" style={{ fontFamily: "var(--font-playfair)" }}>
               {BRAND.name.toUpperCase()}
             </span>
-            <span className="text-[10px] text-[#b0b0b0] tracking-widest uppercase" style={{ fontFamily: "var(--font-lora)" }}>
+            <span className="text-[8px] sm:text-[10px] text-[#b0b0b0] tracking-widest uppercase" style={{ fontFamily: "var(--font-lora)" }}>
               {BRAND.tagline}
             </span>
           </div>
         </Link>
 
         {/* Desktop Navigation */}
-        <div className="hidden lg:flex lg:gap-x-10">
+        <div className="hidden lg:flex lg:gap-x-8 xl:gap-x-10">
           {navLinks.map((link) => (
             <Link
               key={link.href}
@@ -44,10 +44,10 @@ export default function Header() {
         </div>
 
         {/* CTA Button */}
-        <div className="hidden lg:flex lg:items-center lg:gap-x-4">
+        <div className="hidden lg:flex lg:items-center">
           <a
             href={`tel:${CONTACT.phone}`}
-            className="border border-[#c9a961] px-6 py-2.5 text-xs font-medium text-[#c9a961] hover:bg-[#c9a961] hover:text-black transition-all duration-300 tracking-wider"
+            className="border border-[#c9a961] px-5 py-2.5 text-[10px] xl:text-xs font-medium text-[#c9a961] hover:bg-[#c9a961] hover:text-black transition-all duration-300 tracking-wider"
             style={{ fontFamily: "var(--font-lora)" }}
           >
             INQUIRE NOW
@@ -83,20 +83,22 @@ export default function Header() {
       {/* Mobile menu */}
       {mobileMenuOpen && (
         <div className="lg:hidden bg-black border-t border-[#c9a961]/20">
-          <div className="space-y-1 px-6 pb-3 pt-2">
+          <div className="space-y-1 px-4 py-4">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
-                className="block px-3 py-3 text-sm font-medium text-white hover:text-[#c9a961] tracking-wider"
+                className="block px-4 py-3 text-sm font-medium text-white hover:text-[#c9a961] tracking-wider border-b border-[#c9a961]/10 last:border-0"
                 onClick={() => setMobileMenuOpen(false)}
+                style={{ fontFamily: "var(--font-lora)" }}
               >
                 {link.label}
               </Link>
             ))}
             <a
               href={`tel:${CONTACT.phone}`}
-              className="mt-4 block border border-[#c9a961] px-3 py-3 text-center text-sm font-medium text-[#c9a961] hover:bg-[#c9a961] hover:text-black transition-all"
+              className="mt-4 block border border-[#c9a961] px-4 py-3 text-center text-xs font-medium text-[#c9a961] hover:bg-[#c9a961] hover:text-black transition-all tracking-widest"
+              style={{ fontFamily: "var(--font-lora)" }}
             >
               INQUIRE NOW
             </a>

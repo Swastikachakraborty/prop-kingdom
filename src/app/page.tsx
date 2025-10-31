@@ -13,20 +13,20 @@ export default function Home() {
   return (
     <div className="bg-black">
       {/* Hero Section */}
-      <section className="relative h-screen">
+      <section className="relative h-screen min-h-[600px]">
         <motion.div 
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.8, ease: easeOutQuart }}
           className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1920&h=1080&fit=crop')] bg-cover bg-center"
         >
-          <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black"></div>
+          <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/60 to-black"></div>
         </motion.div>
         <motion.div 
           variants={staggerContainer}
           initial="initial"
           animate="animate"
-          className="relative mx-auto flex h-full max-w-7xl flex-col items-center justify-center px-6 text-center"
+          className="relative mx-auto flex h-full max-w-7xl flex-col items-center justify-center px-4 sm:px-6 lg:px-8 text-center"
         >
           {/* Decorative Line */}
           <motion.div
@@ -46,7 +46,7 @@ export default function Home() {
           
           <motion.h1
             variants={fadeInUp}
-            className="mb-6 max-w-4xl text-6xl font-bold leading-tight text-white md:text-7xl lg:text-8xl" 
+            className="mb-6 max-w-4xl text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold leading-tight text-white" 
             style={{ fontFamily: "var(--font-playfair)" }}
           >
             THE FINEST
@@ -63,7 +63,7 @@ export default function Home() {
           
           <motion.p
             variants={fadeInUp}
-            className="mb-12 max-w-2xl text-base text-gray-300 leading-relaxed" 
+            className="mb-8 sm:mb-12 max-w-2xl text-sm sm:text-base text-gray-300 leading-relaxed px-4" 
             style={{ fontFamily: "var(--font-lora)" }}
           >
             The gamut of preferred properties. Premium residential and commercial spaces curated for distinguished clientele.
@@ -71,12 +71,12 @@ export default function Home() {
           
           <motion.div
             variants={fadeInUp}
-            className="flex flex-col gap-4 sm:flex-row"
+            className="flex flex-col gap-3 sm:gap-4 w-full max-w-md sm:max-w-none sm:w-auto sm:flex-row px-4"
           >
-            <motion.div whileHover={buttonHover} whileTap={{ scale: 0.98 }}>
+            <motion.div whileHover={buttonHover} whileTap={{ scale: 0.98 }} className="w-full sm:w-auto">
               <Link
                 href="/properties"
-                className="block border border-[#c9a961] bg-[#c9a961] px-10 py-4 text-xs font-medium tracking-widest text-black transition-all duration-300 hover:bg-transparent hover:text-[#c9a961]"
+                className="block w-full text-center border border-[#c9a961] bg-[#c9a961] px-8 sm:px-10 py-3 sm:py-4 text-[10px] sm:text-xs font-medium tracking-widest text-black transition-all duration-300 hover:bg-transparent hover:text-[#c9a961]"
                 style={{ fontFamily: "var(--font-lora)" }}
               >
                 EXPLORE COLLECTION
@@ -86,14 +86,14 @@ export default function Home() {
               href={`tel:${CONTACT.phone}`}
               whileHover={buttonHover}
               whileTap={{ scale: 0.98 }}
-              className="border border-white px-10 py-4 text-xs font-medium tracking-widest text-white transition-all duration-300 hover:bg-white hover:text-black"
+              className="w-full sm:w-auto text-center border border-white px-8 sm:px-10 py-3 sm:py-4 text-[10px] sm:text-xs font-medium tracking-widest text-white transition-all duration-300 hover:bg-white hover:text-black"
               style={{ fontFamily: "var(--font-lora)" }}
             >
               SCHEDULE VIEWING
             </motion.a>
           </motion.div>
           
-          {/* Scroll Indicator */}
+          {/* Scroll Indicator - hidden on mobile */}
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1, y: [0, 10, 0] }}
@@ -101,7 +101,7 @@ export default function Home() {
               opacity: { delay: 1, duration: 0.6 },
               y: { delay: 1.5, duration: 2, repeat: Infinity, ease: "easeInOut" }
             }}
-            className="absolute bottom-12 flex flex-col items-center"
+            className="absolute bottom-8 sm:bottom-12 hidden sm:flex flex-col items-center"
           >
             <span className="mb-2 text-xs text-gray-400 tracking-widest">SCROLL</span>
             <div className="h-12 w-px bg-gradient-to-b from-[#c9a961] to-transparent"></div>
