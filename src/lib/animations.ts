@@ -1,13 +1,13 @@
 import { Variants } from "framer-motion";
 
-// Cinematic easing curves
-export const easeOutQuart = [0.25, 1, 0.5, 1];
-export const easeInOutCubic = [0.65, 0, 0.35, 1];
-export const easeOutExpo = [0.16, 1, 0.3, 1];
-export const easeOutSine = [0.61, 1, 0.88, 1];
-export const easeOutCirc = [0, 0.55, 0.45, 1];
-export const easeInOutSine = [0.37, 0, 0.63, 1];
-export const easeInOut = [0.45, 0, 0.55, 1];
+// Cinematic easing curves (as tuples for TypeScript)
+export const easeOutQuart: [number, number, number, number] = [0.25, 1, 0.5, 1];
+export const easeInOutCubic: [number, number, number, number] = [0.65, 0, 0.35, 1];
+export const easeOutExpo: [number, number, number, number] = [0.16, 1, 0.3, 1];
+export const easeOutSine: [number, number, number, number] = [0.61, 1, 0.88, 1];
+export const easeOutCirc: [number, number, number, number] = [0, 0.55, 0.45, 1];
+export const easeInOutSine: [number, number, number, number] = [0.37, 0, 0.63, 1];
+export const easeInOut: [number, number, number, number] = [0.45, 0, 0.55, 1];
 
 // Fade in from bottom (for headlines and CTAs)
 export const fadeInUp: Variants = {
